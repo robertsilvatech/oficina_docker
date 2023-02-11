@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  web-color-1:
+    image: robertsilvatech/flask-color
+    container_name: color1
+    ports:
+      - "8000:8000"
+    environment:
+      - COLOR=BLUE
+    networks:
+      - compose-lab
+
+networks:
+  compose-lab:
+    driver: bridge
