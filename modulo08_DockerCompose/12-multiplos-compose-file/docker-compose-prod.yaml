@@ -1,0 +1,8 @@
+version: "3.9"
+
+services:
+  web-color-1:
+    ports:
+      - "5001:5000"
+    environment:
+      - COLOR=GREEN

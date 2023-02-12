@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  web-color-1:
+    image: robertsilvatech/flask-color
+    environment:
+      - COLOR=BLUE
+    networks:
+      - compose-lab
+
+networks:
+  compose-lab:
+    driver: bridge
