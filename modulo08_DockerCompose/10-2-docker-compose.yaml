@@ -5,12 +5,17 @@ services:
     image: robertsilvatech/flask-color
     container_name: color1
     ports:
-      - "8000:8000"
+      - "5000:5000"
     environment:
       - COLOR=BLUE
     networks:
-      - compose-lab
+      - frontend-network
+    volumes: 
+      - app-data:/data
 
 networks:
-  compose-lab:
-    driver: bridge
+  frontend-network:
+    external: true
+
+volumes:
+  app-data: 
