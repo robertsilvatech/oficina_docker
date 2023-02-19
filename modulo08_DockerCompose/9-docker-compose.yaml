@@ -1,3 +1,5 @@
+# OF_DOCKER_M08A09 - Usando rede externa no Docker Compose
+
 version: "3.9"
 
 services:
@@ -10,8 +12,6 @@ services:
       - COLOR=BLUE
     networks:
       - frontend-network
-    volumes: 
-      - ./data:/data
 
 networks:
   frontend-network:

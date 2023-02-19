@@ -1,3 +1,5 @@
+# OF_DOCKER_M08A08 - Criando uma rede customizada no Docker compose
+
 version: "3.9"
 
 services:
@@ -9,10 +11,10 @@ services:
     environment:
       - COLOR=BLUE
     networks:
-      - frontend-network
+      - compose-lab
 
 networks:
-  frontend-network:
-    external: true
+  compose-lab:
+    driver: bridge
 
 

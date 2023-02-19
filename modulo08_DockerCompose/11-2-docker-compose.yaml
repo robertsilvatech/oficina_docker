@@ -1,3 +1,5 @@
+# OF_DOCKER_M08A11 - Trabalhando com volumes no Compose
+
 version: "3.9"
 
 services:
@@ -9,10 +11,13 @@ services:
     environment:
       - COLOR=BLUE
     networks:
-      - compose-lab
+      - frontend-network
+    volumes: 
+      - app-data:/data
 
 networks:
-  compose-lab:
-    driver: bridge
+  frontend-network:
+    external: true
 
-
+volumes:
+  app-data: 
