@@ -3,6 +3,8 @@
 Seja bem vindo ao repositório utilizado nas aulas da Oficina Docker.   
 Este repositório tem como objetivo ser uma referência para os alunos.
 
+> Neste repositório teremos informações referente as aulas que utilizamos arquivos, scripts e etc
+
 ## Sobre a Oficina Docker
 
 - [Clique aqui](https://ead.jlcp.com.br/curso/oficina-docker/)
