@@ -41,7 +41,7 @@ Primeiro build
 docker image build .
 ```
 
-Onde:
+Onde:  
 . - Significa o contexto ou seja onde o Docker vai buscar o conteúdo para a imagem
 
 Adicionando tag na imagem
@@ -53,5 +53,6 @@ docker image build -t ofdocker-python3 .
 Suba um container e valide se a imagem tem o python instalado.
 
 ```
-docker container run --it --rm ofdocker-python3 python3 -V
+docker container run -it --rm ofdocker-python3 python3 -V
 ```
+
