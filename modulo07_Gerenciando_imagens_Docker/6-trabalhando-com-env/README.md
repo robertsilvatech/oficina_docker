@@ -26,3 +26,13 @@ Substituindo a variável
 ```
 docker container run --rm -e END_FOR=10 -it working-with-env ./example/example.sh
 ```
+
+> Preparamos o script para utilizar a variável END_FOR
+
+```
+#!/bin/bash
+
+END=${END_FOR}
+ 
+for i in $(seq $END); do echo $i; done
+```
