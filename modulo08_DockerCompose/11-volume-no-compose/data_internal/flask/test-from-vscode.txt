@@ -1,0 +1,1 @@
+Write on file from terminal

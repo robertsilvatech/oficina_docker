@@ -1,0 +1,35 @@
+version: "3.9"
+
+x-template-service: &template-service
+  image: robertsilvatech/flask-color
+  ports:
+    - "5000:5000"
+  environment:
+    - COLOR=BLUE
+  networks:
+    - frontend-network
+
+services:
+  web-color-1: *template-service
+  web-color-2:
+    <<: *template-service
+    ports:
+      - "5001:5000"
+    environment:
+      - COLOR=GREEN
+  web-color-3:
+    <<: *template-service
+    ports:
+      - "5002:5000"
+    environment:
+      - COLOR=RED
+  web-color-4:
+    <<: *template-service  
+    ports:
+      - "5003:5000"
+    environment:
+      - COLOR=YELLOW
+
+networks:
+  frontend-network:
+    external: true

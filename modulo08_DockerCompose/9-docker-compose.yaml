@@ -16,5 +16,3 @@ services:
 networks:
   frontend-network:
     external: true
-
-

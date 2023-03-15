@@ -13,7 +13,7 @@ services:
     networks:
       - frontend-network
     volumes: 
-      - ./data:/data
+      - ./data_internal/flask:/data
 
 networks:
   frontend-network:

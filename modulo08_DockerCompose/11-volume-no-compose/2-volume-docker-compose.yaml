@@ -3,17 +3,18 @@
 version: "3.9"
 
 services:
-  web-color-1:
+  web-color-2:
     image: robertsilvatech/flask-color
-    container_name: color1
+    container_name: color2
     ports:
-      - "5000:5000"
+      - "5001:5000"
     environment:
       - COLOR=BLUE
     networks:
       - frontend-network
     volumes: 
       - app-data:/data
+      - app-log:/var/log/
 
 networks:
   frontend-network:
@@ -21,3 +22,5 @@ networks:
 
 volumes:
   app-data: 
+  app-log:
+    external: true
