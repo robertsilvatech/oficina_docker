@@ -23,4 +23,5 @@ docker image build -t workdir .
 Valide os arquivos dentro da imagem
 ```
 docker container run --rm -it workdir ls -l teste
+docker container run --rm -it working-with-env ./example/example.sh
 ```
