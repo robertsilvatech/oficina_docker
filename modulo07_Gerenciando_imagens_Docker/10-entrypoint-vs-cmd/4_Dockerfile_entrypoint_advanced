@@ -1,0 +1,28 @@
+FROM ubuntu:22.04
+
+RUN apt update -y && \
+    apt install -y python3.10 python3-pip
+
+WORKDIR /app
+COPY requirements.txt .
+
+RUN pip install -U pip && pip install -r requirements.txt
+
+COPY oficinadocker.py .
+COPY --chmod=777 docker-entrypoint.sh .
+COPY setup.py .
+COPY templates/ templates/
+
+VOLUME /data/logs/
+
+ENV LOGFILE=/data/logs/example.log
+ENV COLOR=yellow
+
+EXPOSE 5000/tcp
+
+EXPOSE 5000/tcp
+
+ENV FLASK_APP=oficinadocker
+ENV DEPLOY_PROD=true
+
+ENTRYPOINT ["./docker-entrypoint.sh"]
