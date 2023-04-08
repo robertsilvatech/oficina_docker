@@ -1,6 +1,11 @@
 # README.md
 
 Nesta aula vamos aprender sobre o parâmetro EXPOSE
+Para está aula criamos uma aplicação web simples em python utilizando o microframework Flask.
+- Está aplicação, além da variável `LOGFILE` que definimos na aula anterior
+- Temos a variável `COLOR` que por padrão será `yellow`
+- A aplicação vai ter uma página `HOME` com o background de acordo com a variável `COLOR`
+- E terá os endpoint `/` e `/name`
 
 Sobre os parâmetros:  
 - EXPOSE
@@ -32,7 +37,7 @@ docker container ls -a
 ```
 
 > Observe que não temos container em execução, porque na imagem não temos um comando para inicializar o container.  
-> Veremos sobre ENTRPOINT e CMD na próxima aula.  
+> Veremos sobre ENTRYPOINT e CMD na próxima aula.  
 
 Crie o container passando um comando
 ```

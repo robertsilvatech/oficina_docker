@@ -47,7 +47,7 @@ Onde:
 Adicionando tag na imagem
 
 ```
-docker image build -t ofdocker-python3 .
+docker image build -t ofdocker-python3 -t ofdocker-python3:1.0 .
 ```
 
 Suba um container e valide se a imagem tem o python instalado.

@@ -14,5 +14,6 @@ COPY templates/ templates/
 VOLUME /data/logs/
 
 ENV LOGFILE=/data/logs/example.log
+ENV COLOR=yellow
 
 EXPOSE 5000/tcp
