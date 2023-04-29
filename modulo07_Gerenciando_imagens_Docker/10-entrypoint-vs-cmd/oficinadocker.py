@@ -49,4 +49,8 @@ app = Flask(__name__)
 @app.route("/")
 @app.route('/<name>')
 def home(name=None):
-    return render_template('index.html', name=name)
+    color = os.getenv('COLOR')
+    if color:
+        return render_template('index.html', name=name, color=color)
+    else:
+        return render_template('index.html', name=name)

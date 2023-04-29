@@ -1,6 +1,6 @@
 # README.md
 
-Nesta aula vamos aprender sobre o parâmetro EXPOSE
+Nesta aula vamos aprender sobre o parâmetro EXPOSE.  
 Para está aula criamos uma aplicação web simples em python utilizando o microframework Flask.
 - Está aplicação, além da variável `LOGFILE` que definimos na aula anterior
 - Temos a variável `COLOR` que por padrão será `yellow`
@@ -14,10 +14,12 @@ Sobre os parâmetros:
   - Podemos define se o protocolo utilizado será TCP ou UDP, por padrão é TCP
   - O Expose não publica a porta no container, é um parâmetro que apenas documenta qual as portas estão sendo utilizadas pelo container.
   - Ao criar o container temos duas opções de publicar a porta
-    - -p -> definimos manualmente qual porta queremos publicar
+    - -p -> definimos manualmente qual porta queremos publicar, independentemente do parâmetro EXPOSE.
     - -P -> publica todas as portas que estão "expostas" no container, é nesse caso que entra o parâmetro EXPOSE
   - Sintaxe:
-    - EXPOSE <port> [<port>/<protocol>...]
+    ``` 
+    EXPOSE <port> [<port>/<protocol>...]
+    ```
 
 Aqui o [Dockerfile](Dockerfile) utilizado.  
 
@@ -28,7 +30,7 @@ docker image build -t expose .
 
 Cria o container
 ```
-docker container run -d -P expose flask
+docker container run -d -P expose
 ```
 
 Liste os containers

@@ -1,8 +1,6 @@
 # README.md
 
 Nesta aula vamos aprender sobre os parâmetros `ENTRYPOINT` e `CMD`.
-O `ENTRYPOINT 
-
 
 Sobre os parâmetros:  
 - ENTRYPOINT
@@ -34,14 +32,16 @@ Sobre os parâmetros:
     ENTRYPOINT ["executable", "param1", "param2"]
     ENTRYPOINT command param1 param2
     ```
-
-A instrução ENTRYPOINT é utilizada para configurar os executáveis que sempre serão executados após a inicialização do container. Por exemplo, você pode mencionar um script para ser executado assim que o contêiner for iniciado. Observe que os comandos ENTRYPOINT não podem ser substituídos ou ignorados, mesmo quando você executa o contêiner com argumentos de linha de comando.
-
-
 - CMD
   - https://docs.docker.com/engine/reference/builder/#cmd
+  - Executa um comando na inicialização do container, se não existir o `ENTRYPOINT`
+  - Quando tem o `ENTRYPOINT` o `CMD` não pode mais chamar qualquer comando e ele só passa parâmetros para o `ENTRYPOINT`.
   - Sintaxe:
-    - EXPOSE <port> [<port>/<protocol>...]
+    ```
+    CMD ["executable","param1","param2"] - (exec form, this is the preferred form)
+    CMD ["param1","param2"] - (as default parameters to ENTRYPOINT)
+    CMD command param1 param2 - (shell form)
+    ```
 
 # Trabalhando com ENTRYPOINT
 
@@ -79,7 +79,7 @@ docker image build -t simple-cmd -f 2_Dockerfile_cmd .
 Crie o container
 
 ```
-docker container run -P -d simple-cmd
+docker container run -P -d -e COLOR=red simple-cmd
 ```
 
 Liste os containers
@@ -102,7 +102,7 @@ docker image build -t entrypoint-and-cmd -f 3_Dockerfile_entrypoint_and_cmd .
 Crie o container
 
 ```
-docker container run -P -d entrypoint-and-cmd
+docker container run -P -d -e COLOR=blue entrypoint-and-cmd
 ```
 
 Liste os containers
@@ -125,7 +125,7 @@ docker image build -t entrypoint-advanced -f 4_Dockerfile_entrypoint_advanced .
 Crie o container em modo dev (local)
 
 ```
-docker container run -P -d -e DEPLOY_PROD=false entrypoint-advanced
+docker container run -P -d -e COLOR=gray -e DEPLOY_PROD=false entrypoint-advanced
 ```
 
 Liste os containers
@@ -145,7 +145,7 @@ NOTA:
 Crie o container em modo prod
 
 ```
-docker container run -P -d -e DEPLOY_PROD=true entrypoint-advanced
+docker container run -P -d -e COLOR=yellow -e DEPLOY_PROD=true entrypoint-advanced
 ```
 
 Liste os containers

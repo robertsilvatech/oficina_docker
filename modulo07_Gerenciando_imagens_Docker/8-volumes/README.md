@@ -1,13 +1,13 @@
 # README.md
 
-Nesta aula vamos aprender sobre o conceito de VOLUMES dentro da imagem.
+Nesta aula vamos aprender sobre o conceito de VOLUMES dentro da imagem.  
 Para isso criamos um script simples com as seguintes caracteristicas:
 - O script tem como objetivo gerar logs aleatorios de acordo com a quantidade de contagem definidas
   - A variável `COUNT_END` define a quantidade de linhas do log, por padrão é `10`
   - A variável `LOGFILE` define o nome do arquivo, por padrão no código é `example.log` no diretório de trabalho.
 - No Dockerfile temos as seguintes definições:
   - VOLUME apontando para /data/logs
-    - Será criado um data volume toda vez que o container for iniciado
+    - Será criado um `data volume` toda vez que o container for iniciado
   - ENV LOGFILE=/data/logs/example.log
     - Define a variável `LOGFILE` que será utilizada pelo script para definir o caminho do arquivo de log que será gerado.
 
@@ -41,12 +41,12 @@ Valida o diretório de trabalho definido pelo workdir
 docker container exec -it volume pwd
 ```
 
-Define uma variável de ambiente e executa o script
+Executar o script
 ```
 docker container exec -it volume python3 logging-example.py
 ```
 
-Validando o log gerado
+Validando o log gerado no arquivo
 ```
 docker container exec -it volume tail /data/logs/example.log
 ```
