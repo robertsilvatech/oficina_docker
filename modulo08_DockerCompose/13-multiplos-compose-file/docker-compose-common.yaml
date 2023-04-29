@@ -7,9 +7,6 @@ services:
       - COLOR=BLUE
     networks:
       - compose-lab
-    ports:
-      - "5000:5000"
-
 
 networks:
   compose-lab:

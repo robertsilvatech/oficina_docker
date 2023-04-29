@@ -20,6 +20,8 @@ networks:
   frontend-network:
     external: true
 
+# docker volume create app-log
+
 volumes:
   app-data: 
   app-log:
