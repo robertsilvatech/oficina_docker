@@ -15,7 +15,7 @@ services:
     container_name: color2
     image: robertsilvatech/flask-color
     ports:
-      - "5005:5000"
+      - "5001:5000"
     environment:
       - COLOR=RED  
   color3:
@@ -26,4 +26,4 @@ services:
     environment:
       - COLOR=GREEN
 
-# docker container run -p 5000:5000 -e COLOR=CLUE robertsilvatech/flask-color
+# docker container run -p 5000:5000 -e COLOR=BLUE robertsilvatech/flask-color
