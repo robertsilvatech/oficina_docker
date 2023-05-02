@@ -1,0 +1,196 @@
+[
+    {
+        "ID": "woec1ubgyu0ijjb5k7cjh534b",
+        "Version": {
+            "Index": 45
+        },
+        "CreatedAt": "2023-05-02T05:02:55.66324836Z",
+        "UpdatedAt": "2023-05-02T07:48:35.11946921Z",
+        "Spec": {
+            "Name": "of_docker_color1",
+            "Labels": {
+                "com.docker.stack.image": "robertsilvatech/flask-color",
+                "com.docker.stack.namespace": "of_docker"
+            },
+            "TaskTemplate": {
+                "ContainerSpec": {
+                    "Image": "robertsilvatech/flask-color:latest@sha256:85f6b2b7f1e3dc940bedcf4a033f7e893bc428a2255e79dc1fd28b81464538dd",
+                    "Labels": {
+                        "com.docker.stack.namespace": "of_docker"
+                    },
+                    "Env": [
+                        "COLOR=GREEN"
+                    ],
+                    "Privileges": {
+                        "CredentialSpec": null,
+                        "SELinuxContext": null
+                    },
+                    "StopGracePeriod": 10000000000,
+                    "DNSConfig": {},
+                    "Isolation": "default"
+                },
+                "Resources": {},
+                "RestartPolicy": {
+                    "Condition": "on-failure",
+                    "Delay": 5000000000,
+                    "MaxAttempts": 3,
+                    "Window": 120000000000
+                },
+                "Placement": {
+                    "Constraints": [
+                        "node.labels.ENV == PROD"
+                    ],
+                    "Platforms": [
+                        {
+                            "Architecture": "amd64",
+                            "OS": "linux"
+                        }
+                    ]
+                },
+                "Networks": [
+                    {
+                        "Target": "7uzsrdzy0e2h8pdp5qglcamyq",
+                        "Aliases": [
+                            "color1"
+                        ]
+                    }
+                ],
+                "ForceUpdate": 0,
+                "Runtime": "container"
+            },
+            "Mode": {
+                "Replicated": {
+                    "Replicas": 2
+                }
+            },
+            "UpdateConfig": {
+                "Parallelism": 1,
+                "Delay": 10000000000,
+                "FailureAction": "pause",
+                "Monitor": 5000000000,
+                "MaxFailureRatio": 0,
+                "Order": "stop-first"
+            },
+            "RollbackConfig": {
+                "Parallelism": 1,
+                "FailureAction": "pause",
+                "Monitor": 5000000000,
+                "MaxFailureRatio": 0,
+                "Order": "stop-first"
+            },
+            "EndpointSpec": {
+                "Mode": "vip",
+                "Ports": [
+                    {
+                        "Protocol": "tcp",
+                        "TargetPort": 5000,
+                        "PublishedPort": 5000,
+                        "PublishMode": "ingress"
+                    }
+                ]
+            }
+        },
+        "PreviousSpec": {
+            "Name": "of_docker_color1",
+            "Labels": {
+                "com.docker.stack.image": "robertsilvatech/flask-color",
+                "com.docker.stack.namespace": "of_docker"
+            },
+            "TaskTemplate": {
+                "ContainerSpec": {
+                    "Image": "robertsilvatech/flask-color:latest@sha256:85f6b2b7f1e3dc940bedcf4a033f7e893bc428a2255e79dc1fd28b81464538dd",
+                    "Labels": {
+                        "com.docker.stack.namespace": "of_docker"
+                    },
+                    "Env": [
+                        "COLOR=GREEN"
+                    ],
+                    "Privileges": {
+                        "CredentialSpec": null,
+                        "SELinuxContext": null
+                    },
+                    "Isolation": "default"
+                },
+                "Resources": {},
+                "RestartPolicy": {
+                    "Condition": "on-failure",
+                    "Delay": 5000000000,
+                    "MaxAttempts": 3,
+                    "Window": 120000000000
+                },
+                "Placement": {
+                    "Platforms": [
+                        {
+                            "Architecture": "amd64",
+                            "OS": "linux"
+                        }
+                    ]
+                },
+                "Networks": [
+                    {
+                        "Target": "7uzsrdzy0e2h8pdp5qglcamyq",
+                        "Aliases": [
+                            "color1"
+                        ]
+                    }
+                ],
+                "ForceUpdate": 0,
+                "Runtime": "container"
+            },
+            "Mode": {
+                "Replicated": {
+                    "Replicas": 2
+                }
+            },
+            "UpdateConfig": {
+                "Parallelism": 1,
+                "Delay": 10000000000,
+                "FailureAction": "pause",
+                "MaxFailureRatio": 0,
+                "Order": "stop-first"
+            },
+            "EndpointSpec": {
+                "Mode": "vip",
+                "Ports": [
+                    {
+                        "Protocol": "tcp",
+                        "TargetPort": 5000,
+                        "PublishedPort": 5000,
+                        "PublishMode": "ingress"
+                    }
+                ]
+            }
+        },
+        "Endpoint": {
+            "Spec": {
+                "Mode": "vip",
+                "Ports": [
+                    {
+                        "Protocol": "tcp",
+                        "TargetPort": 5000,
+                        "PublishedPort": 5000,
+                        "PublishMode": "ingress"
+                    }
+                ]
+            },
+            "Ports": [
+                {
+                    "Protocol": "tcp",
+                    "TargetPort": 5000,
+                    "PublishedPort": 5000,
+                    "PublishMode": "ingress"
+                }
+            ],
+            "VirtualIPs": [
+                {
+                    "NetworkID": "2a4ea779x06jnmjrhpqsp7tbo",
+                    "Addr": "10.0.0.3/24"
+                },
+                {
+                    "NetworkID": "7uzsrdzy0e2h8pdp5qglcamyq",
+                    "Addr": "10.0.1.2/24"
+                }
+            ]
+        }
+    }
+]

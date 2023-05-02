@@ -11,6 +11,15 @@ services:
       - oficina-docker
     deploy:
       replicas: 2
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+      update_config:
+        parallelism: 1
+        delay: 10s
+        order: stop-first
 
 networks:
   oficina-docker:

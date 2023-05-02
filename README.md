@@ -7,7 +7,7 @@ Este repositório tem como objetivo ser uma referência para os alunos.
 
 ## Sobre a Oficina Docker
 
-- [Clique aqui](https://ead.jlcp.com.br/curso/oficina-docker/)
+- [Clique aqui](https://oficinadocker.com/docker-day-inscricoes)
 
 [Módulo 07 - Gerenciando imagens Docker](modulo07_Gerenciando_imagens_Docker)
 
@@ -19,3 +19,8 @@ Este repositório tem como objetivo ser uma referência para os alunos.
 - Aula 6 - Criando e executando nosso compose file - [Arquivo(s)](modulo08_DockerCompose/docker-compose.yaml)
 - Aula 7 - Trabalhando com Build no Compose - [Arquivo(s)](https://github.com/robertsilvatech/flask-color)
 - Aula 8 - Criando uma rede customizada no Docker compose - [Arquivo(s)](modulo08_DockerCompose/8-docker-compose.yaml)
+
+[Módulo 09 - Orquestração de containers com Docker Swarm](modulo09_swarm)
+- OF_DOCKER_M09A16 - Docker Stack Deploy
+- OF_DOCKER_M09A17 - Docker Stack Compose File - deploy.restart_policy
+- OF_DOCKER_M09A18 - Docker Stack Compose File - deploy.update_config
