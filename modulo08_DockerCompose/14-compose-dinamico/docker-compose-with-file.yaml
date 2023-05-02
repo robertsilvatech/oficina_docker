@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  webcolor:
+    image: robertsilvatech/flask-color
+    environment:
+      - COLOR=${COLOR:-YELLOW}
+    ports:
+      - "${PORT}:5000"
+    networks:
+      - frontend-network
+
+networks:
+  frontend-network:
+    driver: bridge
