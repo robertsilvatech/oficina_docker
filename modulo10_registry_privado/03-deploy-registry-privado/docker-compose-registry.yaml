@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+    registry:
+        image: registry:2
+        environment:  
+            - REGISTRY_HTTP_ADDR=0.0.0.0:443
+            - REGISTRY_HTTP_TLS_CERTIFICATE=/certs/dockercert.crt
+            - REGISTRY_HTTP_TLS_KEY=/certs/dockercert.key
+        networks:
+            - "oficina-docker"
+        ports: 
+            - "443:443"
+        volumes:
+            - /data/data-docker/certs:/certs   
+            - /data/data-docker/registry:/var/lib/registry
+        deploy:
+            replicas: 1
+            restart_policy:
+                condition: on-failure
+            update_config:
+                parallelism: 1
+                delay: 10s
+                order: start-first
+                
+networks:
+    monitoring-network:
+        external: true

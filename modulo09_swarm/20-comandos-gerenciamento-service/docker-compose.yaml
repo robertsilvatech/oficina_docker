@@ -1,0 +1,54 @@
+version: "3.9"
+
+x-template-service: &template-service
+    image: robertsilvatech/flask-color
+    networks:
+      - oficina-docker
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+      update_config:
+        parallelism: 1
+        delay: 10s
+        order: stop-first
+
+services:
+  color1:
+    <<: *template-service
+    ports:
+      - 5000:5000
+    environment:
+      - COLOR=GREEN
+  color2:
+    <<: *template-service
+    ports:
+      - 5001:5000
+    environment:
+      - COLOR=GREEN
+  color3:
+    <<: *template-service
+    image: robertsilvatech/flaask-color
+    ports:
+      - 5002:5000
+    environment:
+      - COLOR=GREEN
+  color4:
+    <<: *template-service
+    ports:
+      - 5003:5000
+    environment:
+      - COLOR=GREEN
+  color5:
+    <<: *template-service
+    ports:
+      - 5004:5000
+    environment:
+      - COLOR=GREEN                        
+
+networks:
+  oficina-docker:
+    external: true
