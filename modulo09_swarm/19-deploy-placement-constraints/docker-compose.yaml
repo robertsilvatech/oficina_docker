@@ -22,7 +22,7 @@ services:
         order: stop-first
       placement:
         constraints:
-          - node.labels.ENV == PROD
+          - node.role == worker
 
 networks:
   oficina-docker:
