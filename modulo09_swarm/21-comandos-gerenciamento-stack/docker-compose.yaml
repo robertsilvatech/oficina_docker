@@ -15,6 +15,9 @@ x-template-service: &template-service
         parallelism: 1
         delay: 10s
         order: stop-first
+      placement:
+        constraints:
+          - node.labels.ENV==${ENV}      
 
 services:
   color1:
