@@ -22,33 +22,23 @@ x-template-service: &template-service
 services:
   color1:
     <<: *template-service
-    ports:
-      - 5000:5000
     environment:
       - COLOR=GREEN
   color2:
     <<: *template-service
-    ports:
-      - 5001:5000
     environment:
       - COLOR=GREEN
   color3:
     <<: *template-service
     image: robertsilvatech/flaask-color
-    ports:
-      - 5002:5000
     environment:
       - COLOR=GREEN
   color4:
     <<: *template-service
-    ports:
-      - 5003:5000
     environment:
       - COLOR=GREEN
   color5:
     <<: *template-service
-    ports:
-      - 5004:5000
     environment:
       - COLOR=GREEN                        
 
