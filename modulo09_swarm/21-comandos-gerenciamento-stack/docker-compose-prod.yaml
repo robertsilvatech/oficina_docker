@@ -3,16 +3,16 @@ version: "3.9"
 services:
   color1:
     ports:
-      - 5100:5000
+      - 5200:5000
   color2:
     ports:
-      - 5101:5000
+      - 5201:5000
   color3:
     ports:
-      - 5102:5000
+      - 5202:5000
   color4:
     ports:
-      - 5103:5000
+      - 5203:5000
   color5:
     ports:
-      - 5104:5000
+      - 5204:5000
